@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <ComboBox Name="PickUser" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="392" Height="26">
+            <ComboBoxItem>Consultant</ComboBoxItem>
+            <ComboBoxItem>Manager</ComboBoxItem>
+        </ComboBox>
     </Grid>
 </Window>
