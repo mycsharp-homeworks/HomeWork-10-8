@@ -41,20 +41,26 @@ namespace HomeWork_10_8
         private void PickUser_DropDownOpened(object sender, EventArgs e)
         {
             string selectedUserType = ((ComboBoxItem)PickUser.SelectedItem).Content.ToString();
-            name.Text = selectedUserType;
+            
         }
 
         private void ClientList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ClientList.SelectedItem is Client selectedClient)
             {
-                // Установите имя клиента в TextBox
-                name.Text = selectedClient.name;
-                surname.Text = selectedClient.surname;
-                patronymic.Text = selectedClient.patronymic;
-                mobile.Text = selectedClient.cellPhoneNumber;
-                passSeries.Text = selectedClient.passportSeries;
-                passNumber.Text = selectedClient.passportNumber;
+                name.Content = selectedClient.name;
+                surname.Content = selectedClient.surname;
+                patronymic.Content = selectedClient.patronymic;
+                mobile.Content = selectedClient.cellPhoneNumber;
+                passSeries.Content = selectedClient.passportSeries;
+                passNumber.Content = selectedClient.passportNumber;
+
+                newName.Text = selectedClient.name;
+                newSurname.Text = selectedClient.surname;
+                newPatronymic.Text = selectedClient.patronymic;
+                newMobile.Text = selectedClient.cellPhoneNumber;
+                newPassSeries.Text = selectedClient.passportSeries;
+                newPassNumber.Text = selectedClient.passportNumber;
             }
         }
     }
