@@ -15,15 +15,15 @@ namespace HomeWork_10_8
         public string passportSeries { get; set; }
         public string passportNumber { get; set; }
 
-        public Client(string name, 
-            string surname, 
+        public Client(string surname,
+            string name,              
             string patronymic, 
             string cellPhoneNumber, 
             string passportSeries, 
             string passportNumber)
-        {
-            this.name = name;
+        {            
             this.surname = surname;
+            this.name = name;
             this.patronymic = patronymic;
             this.cellPhoneNumber = cellPhoneNumber;
             this.passportSeries = passportSeries;

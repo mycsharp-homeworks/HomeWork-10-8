@@ -1,0 +1,15 @@
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\bin\Debug\HomeWork-10_8.exe.config
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\bin\Debug\HomeWork-10_8.exe
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\bin\Debug\HomeWork-10_8.pdb
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork-10_8.csproj.AssemblyReference.cache
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\MainWindow.g.cs
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\App.g.cs
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork-10_8_MarkupCompile.cache
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork-10_8_MarkupCompile.lref
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\MainWindow.baml
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork-10_8.g.resources
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork_10_8.Properties.Resources.resources
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork-10_8.csproj.GenerateResource.cache
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork-10_8.csproj.CoreCompileInputs.cache
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork-10_8.exe
+C:\cSharp_HomeWorks\HomeWork-10-8\HomeWork-10_8\HomeWork-10_8\obj\Debug\HomeWork-10_8.pdb

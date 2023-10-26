@@ -5,11 +5,145 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeWork_10_8"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" 
+        MaxHeight="500" 
+        MaxWidth="810" 
+        MinHeight="500" 
+        MinWidth="810" 
+        d:DesignHeight="450" 
+        d:DesignWidth="800">
     <Grid>
-        <ComboBox Name="PickUser" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Width="392" Height="26">
-            <ComboBoxItem>Consultant</ComboBoxItem>
-            <ComboBoxItem>Manager</ComboBoxItem>
+        <ComboBox Name="PickUser" 
+                  HorizontalAlignment="Left" 
+                  Margin="125,21,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="94" Height="23"
+                  SelectedIndex="0" DropDownOpened="PickUser_DropDownOpened">
+            <ComboBoxItem Name="Consultant">Consultant</ComboBoxItem>
+            <ComboBoxItem Name="Manager">Manager</ComboBoxItem>
         </ComboBox>
+        <Border HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Width="237"
+                Height="420"
+                Margin="290,0,0,0"
+                BorderBrush="Black"
+                BorderThickness="1">
+            <Grid Margin="0,0,0,9">
+                <Label Content="Client Info" 
+                    HorizontalContentAlignment="Center"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Top" 
+                    Margin="0,30,0,0" Height="31" Width="148" FontSize="14"/>
+                <TextBlock HorizontalAlignment="Center" 
+                    Margin="0,80,0,0" 
+                    TextWrapping="Wrap" 
+                    Name="name"
+                    Text="Name" 
+                    VerticalAlignment="Top" 
+                    Width="148" Height="35"/>
+                <TextBlock HorizontalAlignment="Center" 
+                    Margin="0,130,0,0" 
+                    TextWrapping="Wrap" 
+                    Name="surname"
+                    Text="Surname" 
+                    VerticalAlignment="Top" 
+                    Width="148" Height="35"/>
+                <TextBlock HorizontalAlignment="Center" 
+                    Margin="0,180,0,0" 
+                    TextWrapping="Wrap" 
+                    Name="patronymic"
+                    Text="Patronymic" 
+                    VerticalAlignment="Top" 
+                    Width="148" Height="35"/>
+                <TextBlock HorizontalAlignment="Center" 
+                    Margin="0,230,0,0" 
+                    TextWrapping="Wrap"
+                    x:Name="mobile"
+                    Text="Mobile Number" 
+                    VerticalAlignment="Top" 
+                    Width="148" Height="35"/>
+                <TextBlock HorizontalAlignment="Center" 
+                    Margin="0,280,0,0" 
+                    TextWrapping="Wrap"
+                    x:Name="passSeries"
+                    Text="Passport Series" 
+                    VerticalAlignment="Top" 
+                    Width="148" Height="35"/>
+                <TextBlock HorizontalAlignment="Center" 
+                    Margin="0,330,0,0" 
+                    TextWrapping="Wrap"
+                    x:Name="passNumber"
+                    Text="Passport Number" 
+                    VerticalAlignment="Top" 
+                    Width="148" Height="35"/>
+            </Grid>
+        </Border>
+        <Border HorizontalAlignment="Left"
+        VerticalAlignment="Center"
+        Width="237"
+        Height="420"
+        Margin="546,0,0,0"
+        BorderBrush="Black"
+        BorderThickness="1">
+            <Grid Margin="0,0,0,9">
+                <Label Content="Edit Client Info" 
+            HorizontalContentAlignment="Center"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Top" 
+            Margin="0,30,0,0" Height="31" Width="148" FontSize="14"/>
+                <TextBox HorizontalAlignment="Center" 
+            Margin="0,80,0,0" 
+            TextWrapping="Wrap" 
+            Text= "Name" 
+            VerticalAlignment="Top" 
+            Width="148" Height="35"/>
+                <TextBox HorizontalAlignment="Center" 
+            Margin="0,130,0,0" 
+            TextWrapping="Wrap" 
+            Text="Surname" 
+            VerticalAlignment="Top" 
+            Width="148" Height="35"/>
+                <TextBox HorizontalAlignment="Center" 
+            Margin="0,180,0,0" 
+            TextWrapping="Wrap" 
+            Text="Patronymic" 
+            VerticalAlignment="Top" 
+            Width="148" Height="35"/>
+                <TextBox HorizontalAlignment="Center" 
+            Margin="0,230,0,0" 
+            TextWrapping="Wrap" 
+            Text="Mobile Number" 
+            VerticalAlignment="Top" 
+            Width="148" Height="35"/>
+                <TextBox HorizontalAlignment="Center" 
+            Margin="0,280,0,0" 
+            TextWrapping="Wrap" 
+            Text="Passport Series" 
+            VerticalAlignment="Top" 
+            Width="148" Height="35"/>
+                <TextBox HorizontalAlignment="Center" 
+            Margin="0,330,0,0" 
+            TextWrapping="Wrap" 
+            Text="Passport Number" 
+            VerticalAlignment="Top" 
+            Width="148" Height="35"/>
+            </Grid>
+        </Border>
+        <ListBox x:Name="ClientList" HorizontalAlignment="Left" 
+            VerticalAlignment="Center"
+            Width="252"
+            Margin="16,0,0,0" Height="357" 
+            SelectionChanged="ClientList_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding surname}" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding name}" Margin="0,0,5,0"/>
+                        <TextBlock Text="{Binding patronymic}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>
