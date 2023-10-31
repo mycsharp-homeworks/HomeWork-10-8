@@ -15,6 +15,8 @@ namespace HomeWork_10_8
         public string passportSeries { get; set; }
         public string passportNumber { get; set; }
 
+        public Client() { }
+
         public Client(string surname,
             string name,              
             string patronymic, 

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfClient>
+  <Client>
+    <name>Эфим</name>
+    <surname>Куперман</surname>
+    <patronymic>Яковлевич</patronymic>
+    <cellPhoneNumber>Изменить мобильный</cellPhoneNumber>
+    <passportSeries>4048</passportSeries>
+    <passportNumber>597525</passportNumber>
+  </Client>
+  <Client>
+    <name>Екатерина</name>
+    <surname>Бунина</surname>
+    <patronymic>Ивановна</patronymic>
+    <cellPhoneNumber>+7 (940) 253-98-17</cellPhoneNumber>
+    <passportSeries>4064</passportSeries>
+    <passportNumber>303374</passportNumber>
+  </Client>
+  <Client>
+    <name>Константин</name>
+    <surname>Греков</surname>
+    <patronymic>Юлианович</patronymic>
+    <cellPhoneNumber>+7 (942) 301-62-98</cellPhoneNumber>
+    <passportSeries>4919</passportSeries>
+    <passportNumber>245104</passportNumber>
+  </Client>
+  <Client>
+    <name>Мария</name>
+    <surname>Лопес</surname>
+    <patronymic>Хуановна</patronymic>
+    <cellPhoneNumber>+7 (912) 409-82-32</cellPhoneNumber>
+    <passportSeries>4673</passportSeries>
+    <passportNumber>375509</passportNumber>
+  </Client>
+</ArrayOfClient>
