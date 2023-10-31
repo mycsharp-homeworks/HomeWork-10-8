@@ -34,12 +34,22 @@ namespace HomeWork_10_8
         public MainWindow()
         {
             InitializeComponent();
+
+            newName.Text = changeNameText;
+            newSurname.Text = changeSurnameText;
+            newPatronymic.Text = changePatronymicText;
+            newMobile.Text = changeMobileText;
+            newPassSeries.Text = changePassportSeriesText;
+            newPassNumber.Text = changePassportNumberText;
+
             users = new string[] { consultantRoleName, managerRoleName };
      
             сlientsCollection = LoadClientInfoFromXml();
 
             DataContext = this;
-        }       
+        }
+
+        #region Custom Methods
 
         /// <summary>
         /// Этот метод создает новый XML-документ, 
@@ -96,7 +106,9 @@ namespace HomeWork_10_8
 
             ClientList.ItemsSource = LoadClientInfoFromXml();
         }
+        #endregion
 
+        #region ListBox and ComboBox methods
         private void ClientList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ClientList.SelectedItem is Client selectedClient)
@@ -132,6 +144,9 @@ namespace HomeWork_10_8
         {
             selectedRole = PickUser.SelectedItem.ToString();
         }
+        #endregion
+
+        #region Save Button Clicks
 
         private void SaveName_Click(object sender, RoutedEventArgs e)
         {
@@ -198,6 +213,9 @@ namespace HomeWork_10_8
 
             UpdateClientsList(сlientsCollection);
         }
+        #endregion
+
+        #region TextBox GotFocus
 
         private void newName_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -240,5 +258,6 @@ namespace HomeWork_10_8
             TextBox textBox = (TextBox)sender;
             textBox.Text = string.Empty;
         }
+        #endregion
     }
 }

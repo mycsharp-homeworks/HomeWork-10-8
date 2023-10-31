@@ -13,13 +13,24 @@
         d:DesignHeight="450" 
         d:DesignWidth="800">
     <Window.Resources>
-        <Style x:Key="StateChangerStyle" TargetType="TextBox">
+        <Style x:Key="LabelPropertyChanger" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Background" Value="Gray" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Width" Value="148" />
+            <Setter Property="Height" Value="35" />
+        </Style>
+        <Style x:Key="TextBoxPropertyChanger" TargetType="TextBox">
             <Setter Property="TextAlignment" Value="Center" />
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="HorizontalAlignment" Value="Left" />
             <Setter Property="VerticalAlignment" Value="Top" />
             <Setter Property="Width" Value="148" />
             <Setter Property="Height" Value="35" />
+            <Setter Property="TextWrapping" Value="Wrap" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding ElementName=PickUser, Path=SelectedItem}" Value="Consultant">
                     <Setter Property="IsEnabled" Value="False" />
@@ -29,7 +40,12 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-        <Style x:Key="ButtonDeactivation" TargetType="Button">
+        <Style x:Key="ButtonPropertyChanger" TargetType="Button">
+            <Setter Property="Content" Value="Сохр." />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+            <Setter Property="Width" Value="44" />
+            <Setter Property="Height" Value="35" />
             <Style.Triggers>
                 <DataTrigger Binding="{Binding ElementName=PickUser, Path=SelectedItem}" Value="Consultant">
                     <Setter Property="IsEnabled" Value="False" />
@@ -68,66 +84,30 @@
                        Margin="0,30,0,0" 
                        Height="31" Width="173" 
                        FontSize="14"/>
-                <Label HorizontalAlignment="Center" 
-                       Margin="0,20,0,0" 
+                <Label Margin="0,20,0,0" 
                        Name="name"
                        Content="Имя" 
-                       VerticalAlignment="Center" 
-                       Width="148" Height="35"                    
-                       Background="Gray" 
-                       Foreground="White"
-                       HorizontalContentAlignment="Center"
-                       VerticalContentAlignment="Center"/>
-                <Label HorizontalAlignment="Center" 
-                       Margin="0,10,0,0"                      
+                       Style="{StaticResource LabelPropertyChanger}"/>
+                <Label Margin="0,10,0,0"                      
                        Name="surname"
                        Content="Фамилия" 
-                       VerticalAlignment="Top" 
-                       Width="148" Height="35"                                        
-                       Background="Gray" 
-                       Foreground="White"
-                       HorizontalContentAlignment="Center"
-                       VerticalContentAlignment="Center"/>
-                <Label HorizontalAlignment="Center" 
-                       Margin="0,10,0,0" 
+                       Style="{StaticResource LabelPropertyChanger}"/>
+                <Label Margin="0,10,0,0" 
                        Name="patronymic"
                        Content="Отчество" 
-                       VerticalAlignment="Top" 
-                       Width="148" Height="35"                    
-                       Background="Gray" 
-                       Foreground="White"                      
-                       HorizontalContentAlignment="Center"
-                       VerticalContentAlignment="Center"/>
-                <Label HorizontalAlignment="Center" 
-                       Margin="0,10,0,0"
+                       Style="{StaticResource LabelPropertyChanger}"/>
+                <Label Margin="0,10,0,0"
                        x:Name="mobile"
                        Content="Номер телефона" 
-                       VerticalAlignment="Top" 
-                       Width="148" Height="35"                    
-                       Background="Gray" 
-                       Foreground="White"
-                       HorizontalContentAlignment="Center"
-                       VerticalContentAlignment="Center"/>
-                <Label HorizontalAlignment="Center" 
-                       Margin="0,10,0,0"
+                       Style="{StaticResource LabelPropertyChanger}"/>
+                <Label Margin="0,10,0,0"
                        x:Name="passSeries"
                        Content="Серия паспорта" 
-                       VerticalAlignment="Top" 
-                       Width="148" Height="35"                   
-                       Background="Gray" 
-                       Foreground="White"
-                       HorizontalContentAlignment="Center"
-                       VerticalContentAlignment="Center"/>
-                <Label HorizontalAlignment="Center" 
-                       Margin="0,10,0,0"
+                       Style="{StaticResource LabelPropertyChanger}"/>
+                <Label Margin="0,10,0,0"
                        x:Name="passNumber"
                        Content="Номер Паспорта" 
-                       VerticalAlignment="Top" 
-                       Width="148" Height="35"                    
-                       Background="Gray" 
-                       Foreground="White"
-                       HorizontalContentAlignment="Center"
-                       VerticalContentAlignment="Center"/>
+                       Style="{StaticResource LabelPropertyChanger}"/>
             </StackPanel>
         </Border>
         <Border HorizontalAlignment="Left"
@@ -144,70 +124,47 @@
                         VerticalAlignment="Top" 
                         Margin="0,30,0,0" Height="31" Width="185" FontSize="14"/>
                 <TextBox Margin="21,80,0,0" 
-                         TextWrapping="Wrap" 
-                         Text= "Изменить имя"
                          Name="newName"
-                         Style="{StaticResource StateChangerStyle}" 
+                         Style="{StaticResource TextBoxPropertyChanger}" 
                          GotFocus="newName_GotFocus"/>
                 <TextBox Margin="21,130,0,0" 
-                         TextWrapping="Wrap" 
-                         Text="Изменить фамилию"
                          Name="newSurname"
-                         Style="{StaticResource StateChangerStyle}" 
+                         Style="{StaticResource TextBoxPropertyChanger}" 
                          GotFocus="newSurname_GotFocus"/>
                 <TextBox Margin="21,180,0,0" 
-                         TextWrapping="Wrap" 
-                         Text="Изменить отчество"
                          Name="newPatronymic"
-                         Style="{StaticResource StateChangerStyle}" 
+                         Style="{StaticResource TextBoxPropertyChanger}" 
                          GotFocus="newPatronymic_GotFocus"/>
                 <TextBox HorizontalAlignment="Left"
                          VerticalAlignment="Top"
                          Margin="21,230,0,0" 
                          TextWrapping="Wrap" 
-                         Text="Изменить мобильный"
                          Name="newMobile"
                          TextAlignment="Center"
                          VerticalContentAlignment="Center" 
                          Width="148" Height="35"
                          GotFocus="newMobile_GotFocus"/>
-                <TextBox Margin="21,280,0,0" 
-                         TextWrapping="Wrap" 
-                         Text="Изменить серию"
+                <TextBox Margin="21,280,0,0"
                          Name="newPassSeries"
-                         Style="{StaticResource StateChangerStyle}" 
+                         Style="{StaticResource TextBoxPropertyChanger}" 
                          GotFocus="newPassSeries_GotFocus"/>
                 <TextBox Margin="21,330,0,0" 
-                         TextWrapping="Wrap" 
-                         Text="Изменить номер"
                          Name="newPassNumber"
-                         Style="{StaticResource StateChangerStyle}" 
+                         Style="{StaticResource TextBoxPropertyChanger}" 
                          GotFocus="newPassNumber_GotFocus"/>
-                <Button Content="Save"
-                        x:Name="SaveName" 
-                        HorizontalAlignment="Left" 
+                <Button x:Name="SaveName" 
                         Margin="174,80,0,0" 
-                        Width="44" Height="35" 
-                        VerticalAlignment="Top" 
                         Click="SaveName_Click"
-                        Style="{StaticResource ButtonDeactivation}"/>
-                <Button Content="Save"
-                        x:Name="saveSurname" 
-                        HorizontalAlignment="Left" 
+                        Style="{StaticResource ButtonPropertyChanger}"/>
+                <Button x:Name="saveSurname" 
                         Margin="174,130,0,0" 
-                        Width="44" Height="35" 
-                        VerticalAlignment="Top" 
-                        Style="{StaticResource ButtonDeactivation}" 
+                        Style="{StaticResource ButtonPropertyChanger}" 
                         Click="saveSurname_Click"/>
-                <Button Content="Save"
-                        x:Name="savePatronymic" 
-                        HorizontalAlignment="Left" 
+                <Button x:Name="savePatronymic" 
                         Margin="174,180,0,0" 
-                        Width="44" Height="35" 
-                        VerticalAlignment="Top" 
-                        Style="{StaticResource ButtonDeactivation}"                        
+                        Style="{StaticResource ButtonPropertyChanger}"                        
                         Click="savePatronymic_Click"/>
-                <Button Content="Save"
+                <Button Content="Сохр."
                         x:Name="saveMobile" 
                         HorizontalAlignment="Left" 
                         Margin="174,230,0,0" 
@@ -215,21 +172,13 @@
                         Width="44" Height="35" 
                         Background="White"
                         Click="saveMobile_Click"/>
-                <Button Content="Save"
-                        x:Name="savePassSeries" 
-                        HorizontalAlignment="Left" 
-                        Margin="174,280,0,0" 
-                        VerticalAlignment="Top" 
-                        Width="44" Height="35"
-                        Style="{StaticResource ButtonDeactivation}" 
+                <Button x:Name="savePassSeries" 
+                        Margin="174,280,0,0"
+                        Style="{StaticResource ButtonPropertyChanger}" 
                         Click="savePassSeries_Click"/>
-                <Button Content="Save"
-                        x:Name="savePassNumber" 
-                        HorizontalAlignment="Left" 
-                        Margin="174,330,0,0" 
-                        VerticalAlignment="Top" 
-                        Width="44" Height="35"
-                        Style="{StaticResource ButtonDeactivation}" 
+                <Button x:Name="savePassNumber" 
+                        Margin="174,330,0,0"
+                        Style="{StaticResource ButtonPropertyChanger}" 
                         Click="savePassNumber_Click"/>
             </Grid>
         </Border>
