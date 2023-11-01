@@ -11,7 +11,7 @@ namespace HomeWork_10_8
         public string name { get; set; }
         public string surname { get; set; }
         public string patronymic { get; set; }
-        public string cellPhoneNumber {  get; set; }
+        public string mobileNumber {  get; set; }
         public string passportSeries { get; set; }
         public string passportNumber { get; set; }
 
@@ -20,14 +20,14 @@ namespace HomeWork_10_8
         public Client(string surname,
             string name,              
             string patronymic, 
-            string cellPhoneNumber, 
+            string mobileNumber, 
             string passportSeries, 
             string passportNumber)
         {            
             this.surname = surname;
             this.name = name;
             this.patronymic = patronymic;
-            this.cellPhoneNumber = cellPhoneNumber;
+            this.mobileNumber = mobileNumber;
             this.passportSeries = passportSeries;
             this.passportNumber = passportNumber;
         }

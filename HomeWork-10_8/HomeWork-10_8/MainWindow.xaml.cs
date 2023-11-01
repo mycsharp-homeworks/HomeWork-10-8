@@ -66,7 +66,7 @@ namespace HomeWork_10_8
                                 new XElement("name", client.name),
                                 new XElement("surname", client.surname),
                                 new XElement("patronymic", client.patronymic),
-                                new XElement("cellPhoneNumber", client.cellPhoneNumber),
+                                new XElement("cellPhoneNumber", client.mobileNumber),
                                 new XElement("passportSeries", client.passportSeries),
                                 new XElement("passportNumber", client.passportNumber)
                             )
@@ -122,7 +122,7 @@ namespace HomeWork_10_8
                     name.Content = consultant.GetName();
                     surname.Content = consultant.GetSurname();
                     patronymic.Content = consultant.GetPatronymic();
-                    mobile.Content = consultant.GetCellPhoneNumber();
+                    mobile.Content = consultant.GetMobileNumber();
                     passSeries.Content = consultant.GetPassportSeries();
                     passNumber.Content = consultant.GetPassportNumber();
                 }
@@ -133,7 +133,7 @@ namespace HomeWork_10_8
                     name.Content = manager.GetName();
                     surname.Content = manager.GetSurname();
                     patronymic.Content = manager.GetPatronymic();
-                    mobile.Content = manager.GetCellPhoneNumber();
+                    mobile.Content = manager.GetMobileNumber();
                     passSeries.Content = manager.GetPassportSeries();
                     passNumber.Content = manager.GetPassportNumber();
                 }
@@ -183,9 +183,9 @@ namespace HomeWork_10_8
 
         private void saveMobile_Click(object sender, RoutedEventArgs e)
         {
-            Manager manager = new Manager(сlientsCollection.ElementAt(index));
+            Consultant consultant = new Consultant(сlientsCollection.ElementAt(index));
 
-            manager.SetCellPhoneNumber(newMobile.Text);
+            consultant.SetCellPhoneNumber(newMobile.Text);
 
             newMobile.Text = changeMobileText;
 

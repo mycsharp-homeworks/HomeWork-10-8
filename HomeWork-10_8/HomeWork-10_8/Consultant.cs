@@ -15,9 +15,9 @@ namespace HomeWork_10_8
             this.client = client;
         }
 
-        public string GetCellPhoneNumber()
+        public string GetMobileNumber()
         {
-            return client.cellPhoneNumber;
+            return client.mobileNumber;
         }
 
         public string GetName()
@@ -47,7 +47,7 @@ namespace HomeWork_10_8
 
         public void SetCellPhoneNumber(string cellPhoneNumber)
         {
-            client.cellPhoneNumber = cellPhoneNumber;
+            client.mobileNumber = cellPhoneNumber;
         }
     }
 }

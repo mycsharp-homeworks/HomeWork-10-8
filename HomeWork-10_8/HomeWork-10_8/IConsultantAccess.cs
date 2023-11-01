@@ -11,7 +11,7 @@ namespace HomeWork_10_8
         string GetName();
         string GetSurname();
         string GetPatronymic();
-        string GetCellPhoneNumber();
+        string GetMobileNumber();
         string GetPassportSeries();
         string GetPassportNumber();
         void SetCellPhoneNumber(string cellPhoneNumber);
