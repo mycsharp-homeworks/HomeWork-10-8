@@ -47,9 +47,12 @@ namespace HomeWork_10_8
 
         public void SetMobileNumber(string mobileNumber, string role)
         {
-            string oldMobile = client.mobileNumber;
-            client.mobileNumber = mobileNumber;
-            Modifications($"{oldMobile} на {mobileNumber}", role, "изменил"); ;
+            if(!mobileNumber.Equals(""))
+            {
+                string oldMobile = client.mobileNumber;
+                client.mobileNumber = mobileNumber;
+                Modifications($"{oldMobile} на {mobileNumber}", role, "изменил");
+            }            
         }
 
         public void Modifications(string whatWasModified, string whoModified, string type)

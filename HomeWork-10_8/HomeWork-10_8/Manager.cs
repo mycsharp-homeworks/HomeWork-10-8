@@ -28,37 +28,52 @@ namespace HomeWork_10_8
 
         public void SetName(string name)
         {
-            string oldName = client.name;
-            client.name = name;
-            Modifications($"{oldName} на {name}", whoModified, type);
+            if (!name.Equals(""))
+            {
+                string oldName = client.name;
+                client.name = name;
+                Modifications($"{oldName} на {name}", whoModified, type);
+            }
         }
 
         public void SetPassportNumber(string passportNumber)
         {
-            string oldPassNum = client.passportNumber;
-            client.passportNumber = passportNumber;
-            Modifications($"{oldPassNum} на {passportNumber}", whoModified, type);
+            if (!passportNumber.Equals(""))
+            {
+                string oldPassNum = client.passportNumber;
+                client.passportNumber = passportNumber;
+                Modifications($"{oldPassNum} на {passportNumber}", whoModified, type);
+            }
         }
 
         public void SetPassportSeries(string passportSeries)
         {
-            string oldPassSeries = client.passportSeries;
-            client.passportSeries = passportSeries;
-            Modifications($"{oldPassSeries} на {passportSeries}", whoModified, type);
+            if (!passportSeries.Equals(""))
+            {
+                string oldPassSeries = client.passportSeries;
+                client.passportSeries = passportSeries;
+                Modifications($"{oldPassSeries} на {passportSeries}", whoModified, type);
+            }
         }
 
         public void SetPatronymic(string patronymic)
         {
-            string oldPatronymic = client.patronymic;
-            client.patronymic = patronymic;
-            Modifications($"{oldPatronymic} на {patronymic}", whoModified, type);
+            if (!patronymic.Equals(""))
+            {
+                string oldPatronymic = client.patronymic;
+                client.patronymic = patronymic;
+                Modifications($"{oldPatronymic} на {patronymic}", whoModified, type);
+            }
         }
 
         public void SetSurname(string surname)
         {
-            string oldSurname = client.surname;
-            client.surname = surname;
-            Modifications($"{oldSurname} на {surname}", whoModified, type);
+            if (!surname.Equals(""))
+            {
+                string oldSurname = client.surname;
+                client.surname = surname;
+                Modifications($"{oldSurname} на {surname}", whoModified, type);
+            }
         }
     }
 }
