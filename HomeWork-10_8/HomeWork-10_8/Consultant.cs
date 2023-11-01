@@ -45,9 +45,19 @@ namespace HomeWork_10_8
             return client.surname;
         }
 
-        public void SetCellPhoneNumber(string cellPhoneNumber)
+        public void SetMobileNumber(string mobileNumber, string role)
         {
-            client.mobileNumber = cellPhoneNumber;
+            string oldMobile = client.mobileNumber;
+            client.mobileNumber = mobileNumber;
+            Modifications($"{oldMobile} на {mobileNumber}", role, "изменил"); ;
+        }
+
+        public void Modifications(string whatWasModified, string whoModified, string type)
+        {
+            client.dateWasModified = $"{DateTime.Now}";
+            client.whatWasModified = whatWasModified;          
+            client.whoHasModified = whoModified;
+            client.modificationType = type;
         }
     }
 }

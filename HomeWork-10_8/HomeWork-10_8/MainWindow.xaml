@@ -84,13 +84,13 @@
                        Margin="0,30,0,0" 
                        Height="31" Width="173" 
                        FontSize="14"/>
-                <Label Margin="0,20,0,0" 
-                       Name="name"
-                       Content="Имя" 
-                       Style="{StaticResource LabelPropertyChanger}"/>
-                <Label Margin="0,10,0,0"                      
+                <Label Margin="0,20,0,0"                      
                        Name="surname"
                        Content="Фамилия" 
+                       Style="{StaticResource LabelPropertyChanger}"/>
+                <Label Margin="0,10,0,0" 
+                       Name="name"
+                       Content="Имя" 
                        Style="{StaticResource LabelPropertyChanger}"/>
                 <Label Margin="0,10,0,0" 
                        Name="patronymic"
@@ -123,11 +123,11 @@
                         HorizontalAlignment="Center" 
                         VerticalAlignment="Top" 
                         Margin="0,30,0,0" Height="31" Width="185" FontSize="14"/>
-                <TextBox Margin="21,80,0,0" 
+                <TextBox Margin="21,130,0,0" 
                          Name="newName"
                          Style="{StaticResource TextBoxPropertyChanger}" 
                          GotFocus="newName_GotFocus"/>
-                <TextBox Margin="21,130,0,0" 
+                <TextBox Margin="21,80,0,0" 
                          Name="newSurname"
                          Style="{StaticResource TextBoxPropertyChanger}" 
                          GotFocus="newSurname_GotFocus"/>
@@ -153,11 +153,11 @@
                          Style="{StaticResource TextBoxPropertyChanger}" 
                          GotFocus="newPassNumber_GotFocus"/>
                 <Button x:Name="SaveName" 
-                        Margin="174,80,0,0" 
+                        Margin="174,130,0,0" 
                         Click="SaveName_Click"
                         Style="{StaticResource ButtonPropertyChanger}"/>
                 <Button x:Name="saveSurname" 
-                        Margin="174,130,0,0" 
+                        Margin="174,80,0,0" 
                         Style="{StaticResource ButtonPropertyChanger}" 
                         Click="saveSurname_Click"/>
                 <Button x:Name="savePatronymic" 
@@ -180,13 +180,18 @@
                         Margin="174,330,0,0"
                         Style="{StaticResource ButtonPropertyChanger}" 
                         Click="savePassNumber_Click"/>
+                <Button x:Name="saveNewUser"
+                        Content="Добавить клиента"
+                        Margin="21,374,0,0"
+                        Style="{StaticResource ButtonPropertyChanger}" 
+                        Width="148" Click="saveNewUser_Click"/>
             </Grid>
         </Border>
         <ListBox x:Name="ClientList" 
                  HorizontalAlignment="Left" 
                  VerticalAlignment="Top"
                  Width="252"
-                 Margin="16,70,0,0" Height="357" 
+                 Margin="16,70,0,0" Height="258" 
                  ItemsSource="{Binding сlientsCollection}"
                  SelectionChanged="ClientList_SelectionChanged">
             <ListBox.ItemTemplate>
@@ -199,5 +204,21 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Label Content="Последние изменения" 
+               HorizontalContentAlignment="Center"
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="16,342,0,0" 
+               Height="31" 
+               Width="252" 
+               FontSize="14"/>
+        <Label Name="lastModified"
+               HorizontalContentAlignment="Center"
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               Margin="16,378,0,0" 
+               Height="74" 
+               Width="252" 
+               FontSize="12"/>
     </Grid>
 </Window>

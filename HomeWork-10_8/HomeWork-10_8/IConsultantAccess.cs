@@ -14,6 +14,6 @@ namespace HomeWork_10_8
         string GetMobileNumber();
         string GetPassportSeries();
         string GetPassportNumber();
-        void SetCellPhoneNumber(string cellPhoneNumber);
+        void SetMobileNumber(string cellPhoneNumber, string role);
     }
 }

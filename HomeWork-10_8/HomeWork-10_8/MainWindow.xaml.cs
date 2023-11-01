@@ -18,6 +18,8 @@ namespace HomeWork_10_8
 
         string consultantRoleName = "Consultant";
         string managerRoleName = "Manager";
+        string theConsultant = "Консультант";
+        string theManager = "Менеджер";
         string selectedRole = "";
 
         string changeNameText = "Изменить имя";
@@ -66,7 +68,7 @@ namespace HomeWork_10_8
                                 new XElement("name", client.name),
                                 new XElement("surname", client.surname),
                                 new XElement("patronymic", client.patronymic),
-                                new XElement("cellPhoneNumber", client.mobileNumber),
+                                new XElement("mobileNumber", client.mobileNumber),
                                 new XElement("passportSeries", client.passportSeries),
                                 new XElement("passportNumber", client.passportNumber)
                             )
@@ -100,11 +102,33 @@ namespace HomeWork_10_8
         /// Замем выгружает информацию из этог файла и обновляет список клиентов в ClientList
         /// </summary>
         /// <param name="clients"></param>
-        public void UpdateClientsList(ObservableCollection<Client> clientCollection)
+        public void UpdateClientsList(ObservableCollection<Client> clientCollection, Client client)
         {
+            lastModified.Content = $"{client.dateWasModified} {client.whoHasModified} " +
+                $"{client.modificationType} \n{client.whatWasModified}";
+
             SaveClientInfoToXml(clientCollection);
 
             ClientList.ItemsSource = LoadClientInfoFromXml();
+        }
+
+        /// <summary>
+        /// Метод проверяет содержимое TextBox, если он пуст,
+        /// то выдает соотвествующее предупреждение
+        /// </summary>
+        /// <param name="stringToSplit"></param>
+        /// <returns></returns>
+        private void CheckIfTextIsNotEmpty(string text)
+        {
+            if (String.IsNullOrEmpty(text))
+            {
+                MessageBox.Show(
+                    "Поле не может быть пустым!",
+                    this.Title,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning
+                    );
+            }
         }
         #endregion
 
@@ -150,68 +174,136 @@ namespace HomeWork_10_8
 
         private void SaveName_Click(object sender, RoutedEventArgs e)
         {
-            Manager manager = new Manager(сlientsCollection.ElementAt(index));
+            Client client = сlientsCollection.ElementAt(index);
+
+            Manager manager = new Manager(client);
+
+            CheckIfTextIsNotEmpty(newName.Text);
 
             manager.SetName(newName.Text);
 
             newName.Text = changeNameText;
 
-            UpdateClientsList(сlientsCollection);
+            UpdateClientsList(сlientsCollection, client);
         }
 
         private void saveSurname_Click(object sender, RoutedEventArgs e)
         {
-            Manager manager = new Manager(сlientsCollection.ElementAt(index));
+            Client client = сlientsCollection.ElementAt(index);
+
+            Manager manager = new Manager(client);
+
+            CheckIfTextIsNotEmpty(newSurname.Text);
 
             manager.SetSurname(newSurname.Text);
 
             newSurname.Text = changeSurnameText;
 
-            UpdateClientsList(сlientsCollection);
+            UpdateClientsList(сlientsCollection, client);
         }
 
         private void savePatronymic_Click(object sender, RoutedEventArgs e)
         {
-            Manager manager = new Manager(сlientsCollection.ElementAt(index));
+            Client client = сlientsCollection.ElementAt(index);
+
+            Manager manager = new Manager(client);
+
+            CheckIfTextIsNotEmpty(newPatronymic.Text);
 
             manager.SetPatronymic(newPatronymic.Text);
 
             newPatronymic.Text = changePatronymicText;
 
-            UpdateClientsList(сlientsCollection);
+            UpdateClientsList(сlientsCollection, client);
         }
 
         private void saveMobile_Click(object sender, RoutedEventArgs e)
         {
-            Consultant consultant = new Consultant(сlientsCollection.ElementAt(index));
+            Client client = сlientsCollection.ElementAt(index);
 
-            consultant.SetCellPhoneNumber(newMobile.Text);
+            if (selectedRole.Equals(consultantRoleName))
+            {
+                Consultant consultant = new Consultant(client);
+
+                CheckIfTextIsNotEmpty(newMobile.Text);
+
+                consultant.SetMobileNumber(newMobile.Text, theConsultant);
+            }
+            else if(selectedRole.Equals(managerRoleName))
+            {
+                Manager manager = new Manager(client);
+
+                CheckIfTextIsNotEmpty(newMobile.Text);
+
+                manager.SetMobileNumber(newMobile.Text, theManager);
+            }
 
             newMobile.Text = changeMobileText;
 
-            UpdateClientsList(сlientsCollection);
+            UpdateClientsList(сlientsCollection, client);
         }
 
         private void savePassSeries_Click(object sender, RoutedEventArgs e)
         {
-            Manager manager = new Manager(сlientsCollection.ElementAt(index));
+            Client client = сlientsCollection.ElementAt(index);
+
+            Manager manager = new Manager(client);
+
+            CheckIfTextIsNotEmpty(newPassSeries.Text);
 
             manager.SetPassportSeries(newPassSeries.Text);
 
             newPassSeries.Text = changePassportSeriesText;
 
-            UpdateClientsList(сlientsCollection);
+            UpdateClientsList(сlientsCollection, client);
         }
 
         private void savePassNumber_Click(object sender, RoutedEventArgs e)
         {
-            Manager manager = new Manager(сlientsCollection.ElementAt(index));
+            Client client = сlientsCollection.ElementAt(index);
+
+            Manager manager = new Manager(client);
+
+            CheckIfTextIsNotEmpty(newPassNumber.Text);
 
             manager.SetPassportNumber(newPassNumber.Text);
 
             newPassNumber.Text = changePassportNumberText;
 
-            UpdateClientsList(сlientsCollection);
+            UpdateClientsList(сlientsCollection, client);
+        }
+
+        private void saveNewUser_Click(object sender, RoutedEventArgs e)
+        {
+            Client newClient = new Client();
+            Manager manager = new Manager(newClient);
+            
+            CheckIfTextIsNotEmpty(newName.Text);
+            manager.SetName(newName.Text);
+
+            CheckIfTextIsNotEmpty(newSurname.Text);
+            manager.SetSurname(newSurname.Text);
+
+            CheckIfTextIsNotEmpty(newPatronymic.Text);
+            manager.SetPatronymic(newPatronymic.Text);
+
+            CheckIfTextIsNotEmpty(newMobile.Text);
+            manager.SetMobileNumber(newMobile.Text, theManager);
+
+            CheckIfTextIsNotEmpty(newPassSeries.Text);
+            manager.SetPassportSeries(newPassSeries.Text);
+
+            CheckIfTextIsNotEmpty(newPassNumber.Text);
+            manager.SetPassportNumber(newPassNumber.Text);
+
+            сlientsCollection.Add(newClient);
+
+            newClient.modificationType = "добавил";
+
+            newClient.whatWasModified = $"{newClient.surname} " +
+                $"{newClient.name} {newClient.patronymic}";
+
+            UpdateClientsList(сlientsCollection, newClient);
         }
         #endregion
 
@@ -259,5 +351,7 @@ namespace HomeWork_10_8
             textBox.Text = string.Empty;
         }
         #endregion
+
+        
     }
 }

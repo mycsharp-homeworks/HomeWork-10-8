@@ -14,6 +14,10 @@ namespace HomeWork_10_8
         public string mobileNumber {  get; set; }
         public string passportSeries { get; set; }
         public string passportNumber { get; set; }
+        public string dateWasModified { get; set; }
+        public string whatWasModified { get; set; }
+        public string modificationType { get; set; }
+        public string whoHasModified { get; set; }
 
         public Client() { }
 

@@ -1,35 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfClient>
   <Client>
-    <name>Ефрем</name>
-    <surname>Куперман</surname>
-    <patronymic>Яковлевич</patronymic>
-    <cellPhoneNumber>Изменить мобильный</cellPhoneNumber>
-    <passportSeries>4048</passportSeries>
-    <passportNumber>597525</passportNumber>
-  </Client>
-  <Client>
-    <name>Екатерина</name>
-    <surname>Бунина</surname>
-    <patronymic>Ивановна</patronymic>
-    <cellPhoneNumber>+7 (940) 253-98-17</cellPhoneNumber>
-    <passportSeries>4064</passportSeries>
-    <passportNumber>303374</passportNumber>
-  </Client>
-  <Client>
-    <name>Константин</name>
-    <surname>Греков</surname>
-    <patronymic>Юлианович</patronymic>
-    <cellPhoneNumber>+7 (942) 301-62-98</cellPhoneNumber>
-    <passportSeries>4919</passportSeries>
-    <passportNumber>245104</passportNumber>
+    <name>Антонио</name>
+    <surname>Бандерас</surname>
+    <patronymic>Диегович</patronymic>
+    <mobileNumber>+34 654 987 123</mobileNumber>
+    <passportSeries>4578</passportSeries>
+    <passportNumber>456789</passportNumber>
   </Client>
   <Client>
     <name>Мария</name>
     <surname>Лопес</surname>
     <patronymic>Хуановна</patronymic>
-    <cellPhoneNumber>+7 (912) 409-82-32</cellPhoneNumber>
-    <passportSeries>4673</passportSeries>
-    <passportNumber>375509</passportNumber>
+    <mobileNumber>+34 456 789 123</mobileNumber>
+    <passportSeries>4512</passportSeries>
+    <passportNumber>987654</passportNumber>
+  </Client>
+  <Client>
+    <name>Джэйн</name>
+    <surname>Доу</surname>
+    <patronymic>Джоновна</patronymic>
+    <mobileNumber>+7 915 456 4578</mobileNumber>
+    <passportSeries>1245</passportSeries>
+    <passportNumber>321654</passportNumber>
   </Client>
 </ArrayOfClient>
